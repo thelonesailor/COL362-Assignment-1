@@ -15,19 +15,17 @@ create table teacher(
 );
 create table section(
     section_number text CHECK (section_number in ('A','B','C','D')),
-    course_id text not null unique references course(course_id),
+    course_id text references course(course_id),
     primary key(section_number,course_id)
 );
 
-
-
 create table registers(
-    student_id text references teacher(teacher_id),
-    course_id text references course(course_id)
+    student_id text not null references student(student_id),
+    course_id text not null references course(course_id)
 );
 create table teaches(
     teacher_id text not null references teacher(teacher_id),
-    course_id text references course(course_id)
+    course_id text not null references course(course_id)
     -- foreign key (teacher_id) references teacher(teacher_id)
     -- foreign key (course_id) references course(course_id)
 );
