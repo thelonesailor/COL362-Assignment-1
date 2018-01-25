@@ -1,4 +1,4 @@
-DROP table IF EXISTS student,course,teacher,section,registers,teaches;
+DROP table IF EXISTS  student,course,teacher,section,registers,teaches ;
 
 -- primary key has not null and unique
 create table student(
@@ -15,18 +15,18 @@ create table teacher(
 );
 create table section(
     section_number text CHECK (section_number in ('A','B','C','D')),
-    course_id text references course(course_id),
+    course_id text not null references course(course_id) on delete cascade,
     primary key(section_number,course_id),
     unique(section_number)
 );
 
 create table registers(
-    student_id text not null references student(student_id),
-    course_id text not null references course(course_id),
+    student_id text not null references student(student_id) on delete cascade,
+    course_id text not null references course(course_id) on delete cascade,
     primary key(student_id,course_id)  -- needed
 );
 create table teaches(
-    teacher_id text not null references teacher(teacher_id),
-    course_id text not null references course(course_id),
-    primary key(teacher_id,course_id),  --needed    
+    teacher_id text not null references teacher(teacher_id) on delete cascade,
+    course_id text not null references course(course_id) on delete cascade,
+    primary key(teacher_id,course_id)  --needed
 );
