@@ -20,5 +20,5 @@ do
 done;
 for (( p=1; p <= 500000; p++ ))
 do
-    echo "insert into student(student_id,course_id) values('$p','$p');" >> $registers;
+    echo "insert into registers(student_id,course_id) values('$p','$p');" >> $registers;
 done;
