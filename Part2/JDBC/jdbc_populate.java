@@ -9,7 +9,7 @@ public class jdbc_populate {
    static final String DBname="assignment1";
    static final String USER = "postgres";
    static final String PASS = "bhaibhai";
-   static final int insert_queries_count=20;   
+   static final int insert_queries_count=200;   
 
    //  Database credentials
    
@@ -43,13 +43,14 @@ public class jdbc_populate {
       for(int i=1;i<=insert_queries_count;i++)
          registers[i]=sql3+"(\'"+Integer.toString(i)+"\',\'"+Integer.toString(i)+"\');";
 
+      stmt = conn.createStatement();
+    
       for(int i=1;i<=insert_queries_count;i++)
-      {  
-         stmt = conn.createStatement();
-         stmt.executeUpdate(course[i]);
-      }
+        stmt.executeUpdate(course[i]);
+
       for(int i=1;i<=insert_queries_count;i++)
          stmt.executeUpdate(student[i]);
+    
       for(int i=1;i<=insert_queries_count;i++)
          stmt.executeUpdate(registers[i]);      
 
