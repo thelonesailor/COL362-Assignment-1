@@ -3,7 +3,7 @@
 student='student.sql'
 course='course.sql'
 registers='registers.sql'
-query_size='500'
+query_size='500000'
 rm -rf $student
 rm -rf $course
 rm -rf $registers
