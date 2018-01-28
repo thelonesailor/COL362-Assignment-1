@@ -36,7 +36,8 @@ There are three tables corresponding to the relations :-
 
 Any updations or deletions in the main tables have to be transmitted to all the other tables, hence, the use of "on update cascade on delete cascade".
 
-"not null references" function has been used to specify that some of these cant have null values.
+"not null" function has been used to specify that some of these cant have null values.
+"references" function creates the link between the main tables and the tables corresponding to relations.
 
 "unique" has been used to mantain unique entries to the table wherever needed and a check statement keeps the sections limited to the four values.  
 
