@@ -1,4 +1,4 @@
-DROP table IF EXISTS  student,course,teacher,section,registers,teaches ;
+DROP table IF EXISTS  student,course,teacher,section,registers,teaches cascade;
 
 -- primary key has not null and unique
 create table student(
