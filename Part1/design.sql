@@ -17,8 +17,8 @@ create table section(
     section_number text CHECK (section_number in ('A','B','C','D')),
     course_id text not null references course(course_id)
     on update cascade on delete cascade,
-    primary key(section_number,course_id),
-    unique(section_number)
+    primary key(section_number,course_id)
+    -- unique(section_number)
 );
 
 create table registers(
